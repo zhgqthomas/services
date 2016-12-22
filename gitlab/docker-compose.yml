@@ -1,0 +1,24 @@
+nginx:
+  extends:
+    file: ~/service/common-services.yml
+    service: nginx
+  links:
+    - gitlab
+
+gitlab:
+  image: 'gitlab/gitlab-ce:latest'
+  restart: always
+  hostname: 'code.shadark.com'
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+      gitlab_rails['gitlab_shell_ssh_port'] = 2224
+  ports:
+    - '2224:22'
+  expose:
+    - '80'
+    - '443'
+    - '22'
+  volumes:
+    - '/srv/gitlab/config:/etc/gitlab'
+    - '/srv/gitlab/logs:/var/log/gitlab'
+    - '/srv/gitlab/data:/var/opt/gitlab'

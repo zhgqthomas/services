@@ -1,0 +1,10 @@
+nginx:
+  image: "nginx:latest"
+  environment:
+    - NGINX_HOST=shadark.com
+    - NGINX_PORT=80
+  ports:
+    - "80:80"
+  volumes:
+    - /srv/nginx/nginx.conf:/etc/nginx/nginx.conf
+    - /srv/nginx/conf.d:/etc/nginx/conf.d
