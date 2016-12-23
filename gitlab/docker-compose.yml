@@ -22,3 +22,4 @@ gitlab:
     - '/srv/gitlab/config:/etc/gitlab'
     - '/srv/gitlab/logs:/var/log/gitlab'
     - '/srv/gitlab/data:/var/opt/gitlab'
+    - '/etc/localtime:/etc/localtime:ro'
