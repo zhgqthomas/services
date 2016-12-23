@@ -6,5 +6,5 @@ nginx:
   ports:
     - "80:80"
   volumes:
-    - '~/srv/nginx/nginx.conf:/etc/nginx/nginx.conf'
-    - '~/srv/nginx/conf.d:/etc/nginx/conf.d'
+    - '/srv/nginx/nginx.conf:/etc/nginx/nginx.conf'
+    - '/srv/nginx/conf.d:/etc/nginx/conf.d'
